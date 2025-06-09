@@ -12,20 +12,26 @@ public class Main {
         arvore.inserir(85);
         arvore.inserir(1);
         arvore.inserir(-96);
-        arvore.inserir(55);
+        arvore.inserir(50);
         arvore.inserir(57);
+        arvore.inserir(53);
         arvore.inserir(44);
         arvore.inserir(7);
         arvore.inserir(69);
-        arvore.inserir(100);
+        arvore.inserir(96);
         arvore.inserir(-19);
-        arvore.inserir(111);
+        arvore.inserir(99);
         arvore.inserir(91);
+        arvore.inserir(4);
+        arvore.inserir(87);
+        arvore.inserir(5);
+        arvore.inserir(9);
+
 
         //chamando o valor que vai chamar o Scanner
         int valor;
 
-        //Mostra as árvores em diferentes ordens
+        //Mostra as árvores em diferentes ordens (chama as funções públicas)
         while (true) {
             System.out.println("\nÁrvore atual:");
             System.out.print("Em ordem: ");
