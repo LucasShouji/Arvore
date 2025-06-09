@@ -40,12 +40,12 @@ public class ArvoreBinaria {
     private No removerNumero(No no, int valorScanner) {
         if (no == null) return null;
 
-        // Busca o valor na subárvore esquerda
+        // Busca o valor no filho da esquerda
         if (valorScanner < no.valor) {
             no.esquerdo = removerNumero(no.esquerdo, valorScanner);
         }
 
-        // Busca o valor na subárvore direita
+        // Busca o valor no filho da direita
         else if (valorScanner > no.valor) {
             no.direito = removerNumero(no.direito, valorScanner);
         }
@@ -61,18 +61,18 @@ public class ArvoreBinaria {
                 return no.esquerdo;
             }
 
-            // Caso nó com dois filhos, substitui pelo maior valor da subárvore esquerda
-            No maxNo = encontrarMaiorValor(no.esquerdo);
-            no.valor = maxNo.valor;
-            no.esquerdo = removerNumero(no.esquerdo, maxNo.valor);
+            // Caso nó com dois filhos, substitui pelo menor valor que vem do filho direito
+            No minNo = encontrarMenorValor(no.direito);
+            no.valor = minNo.valor;
+            no.direito = removerNumero(no.direito, minNo.valor);
         }
 
         return no;
     }
 
-    //Percorre até o final da subárvore direita e retorna o maior valor
-    private No encontrarMaiorValor(No no) {
-        while (no.direito != null) no = no.direito;
+    // Percorre até o final do filho da esquerda e retorna o menor valor
+    private No encontrarMenorValor(No no) {
+        while (no.esquerdo != null) no = no.esquerdo;
         return no;
     }
 
@@ -115,3 +115,4 @@ public class ArvoreBinaria {
         }
     }
 }
+
